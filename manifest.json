@@ -10,7 +10,7 @@
         
     },
     "default_title":"click me",
-    "default_popup":"static/popup.html"
+    "default_popup":"popup/popup.html"
   },
   "description":"This is a snip-ninja extension"
 }
