@@ -1,0 +1,16 @@
+{
+  "name": "Snip-ninja",
+  "manifest_version": 3,
+  "version": "1.0.1",
+
+  "action": 
+  {
+    "default_icons": 
+    {
+        
+    },
+    "default_title":"click me",
+    "default_popup":"static/popup.html"
+  },
+  "description":"This is a snip-ninja extension"
+}
