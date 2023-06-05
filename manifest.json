@@ -3,14 +3,10 @@
   "manifest_version": 3,
   "version": "1.0.1",
 
-  "action": 
-  {
-    "default_icons": 
-    {
-        
-    },
-    "default_title":"click me",
-    "default_popup":"popup/popup.html"
+  "action": {
+    "default_icons": {},
+    "default_title": "click me",
+    "default_popup": "popup/popup.html"
   },
-  "description":"This is a snip-ninja extension"
+  "description": "This is a snip-ninja extension"
 }
