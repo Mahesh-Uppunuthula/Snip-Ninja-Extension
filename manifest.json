@@ -9,10 +9,12 @@
   },
   "description": "This is a snip-ninja extension",
 
-  "content_scripts":[
+  "content_scripts": [
     {
-      "matches":["<all_urls>"],
-      "js":["/content.js"]
+      "matches": ["<all_urls>"],
+      "js": ["/content.js"]
     }
-  ]
+  ],
+  "permissions": ["https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"],
+  "content_security_policy": "script-src 'self' 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js' object-src 'self'"
 }

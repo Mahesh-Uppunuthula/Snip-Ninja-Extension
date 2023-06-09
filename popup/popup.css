@@ -34,6 +34,11 @@
   margin: 1em;
 }
 
+.home-container{
+  border: 1px solid red;
+}
+
+
 .brand {
   border-bottom: 3px solid var(--primary-complimentary-color);
 }
