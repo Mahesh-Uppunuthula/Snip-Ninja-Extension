@@ -1,4 +1,192 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  /* COLORS */
+  --light-color: #ffffff;
+  --primary-color: #8338ec;
+  --primary-complimentary-color: #ffbe0b;
+  --dark-text-color: #121212;
+
+  /* FONT WEIGHTS */
+  --light-weight: 300;
+  --regular-weight: 400;
+  --semi-bold-weight: 600;
+  --bold-weight: 700;
+
+  /* FONT SIZES */
+  --main-heading-font-size: 2.3em;
+  --sub-heading-font-size: 1.5em;
+  --side-heading-font-size: 1em;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.container {
+  width: 25em;
+  height: fit-content;
+  background-color: var(--light-color);
+  margin: 1em;
+}
+
+/* .home-container{
+  border: 1px solid red;
+} */
+
+
+.brand {
+  border-bottom: 3px solid var(--primary-complimentary-color);
+}
+
+.emphasis-text {
+  color: var(--primary-color);
+  font-size: var(--sub-heading-font-size);
+  font-weight: var(--semi-bold-weight);
+  margin-block: 0.5em;
+  padding-bottom: 5px;
+}
+
+.link-item {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.link-item:hover {
+  border-bottom: 3px solid var(--primary-complimentary-color);
+}
+
+.form {
+  text-align: center;
+}
+
+.form .heading {
+  text-align: start;
+  font-size: var(--main-heading-font-size);
+  font-weight: var(--bold-weight);
+  color: var(--dark-text-color);
+  padding-block: 0.5em;
+}
+.form .input {
+  width: 100%;
+  height: 1em;
+  padding: 1.5em;
+  /* border: none; */
+  border-radius: 10px;
+  font-size: var(--side-heading-font-size);
+  font-weight: var(--semi-bold-weight);
+  color: var(--dark-text-color);
+}
+
+.form .input:focus{
+  border: none;
+  outline:  2px solid var(--primary-color);
+}
+
+.form .btn {
+  width: 100%;
+  border: none;
+  margin-block: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  background-color: var(--primary-complimentary-color);
+  color: var(--light-color);
+}
+
+.form .emphasis-text {
+  font-size: var(--side-heading-font-size);
+}
+
+
+/* LOGIN FORM STYLES */
+
+.auth {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+.auth-container {
+  width: 100%;
+  margin: auto;
+}
+
+.form-container {
+  padding: 1em;
+  border: 0.2px solid #00000020;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 1px 1px 10px 1px #00000015 inset;
+}
+
+.auth-container h1 {
+  color: #121212;
+  margin: 1em 10px 0 10px;
+  text-align: center;
+}
+
+.form-container label {
+  font-size: 1em;
+  padding-block: 0.5em;
+  margin-top: 1em;
+}
+
+.form-container input {
+  min-height: 20px;
+  width: 100%;
+  border: 0.5px solid #00000030;
+  border-radius: 0.5em;
+  font-size: 15px;
+  padding: 1em 0.5em;
+  outline-width: 1px;
+  outline-color: var(--primary-color);
+}
+
+.form-container button {
+  width: 100%;
+  align-self: center;
+  margin-block: 2em;
+  padding-block: 1em;
+  border: none;
+  border-radius: 1em;
+  font-size: 1em;
+  color: white;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.helper-text {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.authRedirectLink {
+  padding-left: 10px;
+  font-size: 1em;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.motive-text {
+  text-align: center;
+  font-size: 2em;
+  margin-block: 0.5em;
+}
+
+
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +198,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */

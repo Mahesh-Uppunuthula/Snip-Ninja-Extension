@@ -5,7 +5,7 @@
 
   "action": {
     "default_icons": {},
-    "default_popup": "popup/popup.html"
+    "default_popup": "./public/index.html"
   },
   "description": "This is a snip-ninja extension",
 
