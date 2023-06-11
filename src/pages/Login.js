@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function Login() {
   const [userCredentials, setUserCredentials] = useState({
@@ -42,7 +42,7 @@ function Login() {
           <div className="auth-container">
             <form onSubmit={loginUser}>
               <h1 auth-label>Sign In</h1>
-              <p className="motive-text">Log in to continue</p>
+              <p className="motive-text">Log In to continue</p>
               <div className="form-container">
                 <label htmlFor="Email">Email</label>
                 <input
@@ -72,14 +72,8 @@ function Login() {
 
                 <div className="helper-text">
                   <p>
-                    Not a member?{" "}
-                    <a
-                      className="authRedirectLink"
-                      href={signUpRedirectLink}
-                      // onClick={redirectUserToSnippetsRegisterPage}
-                    >
-                      sign Up
-                    </a>
+                    Not a member?
+                    <p className="authRedirectLink" onClick={redirectUserToSnippetsRegisterPage}>Sign Up</p>
                   </p>
                 </div>
               </div>

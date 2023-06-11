@@ -1,5 +1,6 @@
 import React from "react";
 import Axios from "axios";
+import logoutIcon from "../assets/logout.svg";
 
 function Home() {
   const token = window.localStorage.getItem("token");
@@ -7,9 +8,9 @@ function Home() {
   const BASE_URL = "https://snippets-sever.onrender.com/";
 
   function handleSubmit() {
-    console.log("on click");
+    console.log("request to save file");
     const url = BASE_URL + "dashboard";
-    console.log("token", token);
+    // console.log("token", token);
     Axios.get(url, {
       headers: {
         Authorization: token,
@@ -29,8 +30,14 @@ function Home() {
     <>
       <div className="container">
         <div className="home-container">
-          <div id="home" className="brand emphasis-text link-item">
-            Snip Ninja
+          <div className="top-container">
+            <div id="home" className="brand emphasis-text link-item">
+              Snip Ninja
+            </div>
+            <div className="img__wrap">
+              <img className="logout-icon" src={logoutIcon}></img>
+              <p className="img-desc">logout</p>
+            </div>
           </div>
           <div className="form">
             <div className="heading">

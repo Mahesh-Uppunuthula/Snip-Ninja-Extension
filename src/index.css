@@ -27,8 +27,6 @@
   box-sizing: border-box;
 }
 
-
-
 .container {
   width: 25em;
   height: fit-content;
@@ -39,7 +37,6 @@
 /* .home-container{
   border: 1px solid red;
 } */
-
 
 .brand {
   border-bottom: 3px solid var(--primary-complimentary-color);
@@ -85,9 +82,9 @@
   color: var(--dark-text-color);
 }
 
-.form .input:focus{
+.form .input:focus {
   border: none;
-  outline:  2px solid var(--primary-color);
+  outline: 2px solid var(--primary-color);
 }
 
 .form .btn {
@@ -103,7 +100,6 @@
 .form .emphasis-text {
   font-size: var(--side-heading-font-size);
 }
-
 
 /* LOGIN FORM STYLES */
 
@@ -172,8 +168,9 @@
 }
 
 .authRedirectLink {
+  display: inline-block;
   padding-left: 10px;
-  font-size: 1em;
+  font-size: 1.1em;
   color: var(--primary-color);
   text-decoration: none;
   font-weight: bold;
@@ -185,6 +182,46 @@
   margin-block: 0.5em;
 }
 
+.top-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.logout-icon {
+  cursor: pointer;
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
+  filter: invert(4%) sepia(7%) saturate(144%) hue-rotate(315deg)
+    brightness(103%) contrast(93%);
+}
+.img__wrap {
+  margin-right: 10px;
+  width: auto;
+  position: relative;
+}
+.img__wrap .img-desc {
+  color: var(--light-color);
+  width: max-content;
+  padding: 1em;
+  visibility: hidden;
+  position: absolute;
+  background-color: #12121260;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.img__wrap:hover .img-desc {
+  visibility: visible;
+}
 
 /* body {
   margin: 0;

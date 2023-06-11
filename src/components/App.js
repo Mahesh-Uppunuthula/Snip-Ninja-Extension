@@ -1,12 +1,10 @@
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 function App() {
-  return (
-    <div className="App">
-      {/* <Home /> */}
-      <Login/>
-    </div>
-  );
+  const token = window.localStorage.getItem("token");
+  console.log("token home", token);
+
+  return <div className="App">{token ? <Home /> : <Login />}</div>;
 }
 
 export default App;
