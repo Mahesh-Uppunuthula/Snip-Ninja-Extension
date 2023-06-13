@@ -14,9 +14,13 @@
   --bold-weight: 700;
 
   /* FONT SIZES */
-  --main-heading-font-size: 2.3em;
+  --main-heading-font-size: 2em;
   --sub-heading-font-size: 1.5em;
   --side-heading-font-size: 1em;
+
+  /* RADIUS */
+  --big-radius: 20px;
+  --small-radius: 10px;
 }
 
 *,
@@ -27,19 +31,20 @@
   box-sizing: border-box;
 }
 
-.container {
-  width: 25em;
-  height: fit-content;
-  background-color: var(--light-color);
-  margin: 1em;
+.main-container {
+  width: max-content;
+  height: max-content;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
 }
 
-/* .home-container{
-  border: 1px solid red;
-} */
-
+/* ------------ UTILITES ----------- */
 .brand {
-  border-bottom: 3px solid var(--primary-complimentary-color);
+  width: fit-content;
+  border-bottom: 2.5px solid var(--primary-complimentary-color);
 }
 
 .emphasis-text {
@@ -51,100 +56,79 @@
 }
 
 .link-item {
-  text-decoration: none;
   cursor: pointer;
-  display: inline-block;
 }
 
-.link-item:hover {
-  border-bottom: 3px solid var(--primary-complimentary-color);
-}
-
-.form {
-  text-align: center;
-}
-
-.form .heading {
-  text-align: start;
+.heading {
   font-size: var(--main-heading-font-size);
-  font-weight: var(--bold-weight);
-  color: var(--dark-text-color);
-  padding-block: 0.5em;
-}
-.form .input {
-  width: 100%;
-  height: 1em;
-  padding: 1.5em;
-  /* border: none; */
-  border-radius: 10px;
-  font-size: var(--side-heading-font-size);
-  font-weight: var(--semi-bold-weight);
-  color: var(--dark-text-color);
+  margin-block: 20px 0;
 }
 
-.form .input:focus {
+/*------------ LOGIN STYLES -------- */
+
+.login-container {
+  width: 26em;
+  height: max-content;
   border: none;
-  outline: 2px solid var(--primary-color);
+  border-radius: var(--big-radius);
+  background-color: var(--light-color);
+  padding-bottom: 10px;
 }
 
-.form .btn {
-  width: 100%;
-  border: none;
-  margin-block: 1em;
-  padding: 1em;
-  border-radius: 10px;
-  background-color: var(--primary-complimentary-color);
-  color: var(--light-color);
+/* LOGIN INNER CONTAINER */
+.lg-inner-cont {
+  margin: 1.1em 2em;
 }
 
-.form .emphasis-text {
-  font-size: var(--side-heading-font-size);
-}
-
-/* LOGIN FORM STYLES */
-
-.auth {
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
-}
-
-.auth-container {
-  width: 100%;
-  margin: auto;
+.lg-inner-cont label {
+  font-size: var(--sub-heading-font-size);
+  margin-block: 1.5em 10px;
 }
 
 .form-container {
-  padding: 1em;
-  border: 0.2px solid #00000020;
-  border-radius: 1em;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  box-shadow: 1px 1px 10px 1px #00000015 inset;
 }
 
-.auth-container h1 {
-  color: #121212;
-  margin: 1em 10px 0 10px;
-  text-align: center;
+/* INPUT CONTAINER */
+.form-container .input-cont {
+  border: 1px solid --dar;
+  display: flex;
+  border: 1px solid #12121280;
+  align-items: center;
+  border-radius: 10px;
 }
 
-.form-container label {
-  font-size: 1em;
-  padding-block: 0.5em;
-  margin-top: 1em;
+.form-container .input-cont:has(> .lg-input:focus) {
+  border: none;
+  outline-style: solid;
+  outline-color: var(--primary-color);
+  outline-width: 2px;
 }
 
-.form-container input {
-  min-height: 20px;
+.lg-icon {
+  width: 25px;
+  height: 20px;
+  margin-left: 10px;
+  filter: invert(50%) sepia(0%) saturate(1327%) hue-rotate(175deg)
+    brightness(100%) contrast(82%);
+}
+
+/* INPUT FIELD FOR LOGIN SCREEN */
+.form-container .lg-input {
   width: 100%;
-  border: 0.5px solid #00000030;
-  border-radius: 0.5em;
+  height: 100%;
+  margin-left: 5px;
+  border: none;
+  background-color: transparent;
   font-size: 15px;
   padding: 1em 0.5em;
-  outline-width: 1px;
-  outline-color: var(--primary-color);
+}
+
+/* to avoid input field in input-cont highlight */
+.form-container .lg-input:focus {
+  outline: none;
 }
 
 .form-container button {
@@ -157,18 +141,11 @@
   font-size: 1em;
   color: white;
   font-weight: bold;
-  background-color: var(--primary-color);
+  background-color: var(--primary-complimentary-color);
   cursor: pointer;
-}
-
-.helper-text {
-  margin-top: 1em;
-  display: flex;
-  justify-content: center;
 }
 
 .authRedirectLink {
-  cursor: pointer;
   display: inline-block;
   padding-left: 10px;
   font-size: 1.1em;
@@ -177,10 +154,10 @@
   font-weight: bold;
 }
 
-.motive-text {
-  text-align: center;
-  font-size: 2em;
-  margin-block: 0.5em;
+.form-container .helper-text {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
 }
 
 .top-container {
@@ -206,7 +183,7 @@
 .img__wrap .img-desc {
   color: var(--light-color);
   width: max-content;
-  padding: .5em;
+  padding: 0.5em;
   visibility: hidden;
   position: absolute;
   background-color: #12121280;
