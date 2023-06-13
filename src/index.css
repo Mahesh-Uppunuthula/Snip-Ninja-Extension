@@ -168,6 +168,7 @@
 }
 
 .authRedirectLink {
+  cursor: pointer;
   display: inline-block;
   padding-left: 10px;
   font-size: 1.1em;
@@ -200,23 +201,22 @@
   margin-right: 10px;
   width: auto;
   position: relative;
+  margin-left: auto;
 }
 .img__wrap .img-desc {
   color: var(--light-color);
   width: max-content;
-  padding: 1em;
+  padding: .5em;
   visibility: hidden;
   position: absolute;
-  background-color: #12121260;
+  background-color: #12121280;
   border: none;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   top: 100%;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: -100%;
 }
 
 .img__wrap:hover .img-desc {

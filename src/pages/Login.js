@@ -5,34 +5,10 @@ function Login() {
     email: "",
     password: "",
   });
-  const signUpRedirectLink = "https://snip-ninja.netlify.app/register";
+  const signUpRedirectLink = "";
+  
   function loginUser() {}
-  function redirectUserToSnippetsRegisterPage() {
-    // chrome.tabs.create({ url: "https://snip-ninja.netlify.app/" });
-  }
-
-  // let [textSelected, setSelectedText] = useState("");
-
-  // useEffect(()=>{
-  //   document.onmouseup =
-  //   document.onkeyup =
-  //   document.onselectionchange =
-  //     function () {
-  //       let text = getSelectionText();
-  //       setSelectedText(text);
-  //       console.log("selected text ", text);
-  //     };
-  // }, [textSelected]);
-
-  // function getSelectionText() {
-  //   var text = "";
-  //   if (window.getSelection) {
-  //     text = window.getSelection().toString();
-  //   } else if (document.selection && document.selection.type !== "Control") {
-  //     text = document.selection.createRange().text;
-  //   }
-  //   return text;
-  // }
+  function redirectUserToSnippetsRegisterPage() {}
 
 
   return (
@@ -41,7 +17,9 @@ function Login() {
         <div className="auth">
           <div className="auth-container">
             <form onSubmit={loginUser}>
-              <h1 auth-label>Sign In</h1>
+              <div id="home" className="brand emphasis-text link-item">
+                Snip Ninja
+              </div>
               <p className="motive-text">Log In to continue</p>
               <div className="form-container">
                 <label htmlFor="Email">Email</label>
@@ -73,7 +51,12 @@ function Login() {
                 <div className="helper-text">
                   <p>
                     Not a member?
-                    <p className="authRedirectLink" onClick={redirectUserToSnippetsRegisterPage}>Sign Up</p>
+                    <p
+                      className="authRedirectLink"
+                      onClick={redirectUserToSnippetsRegisterPage}
+                    >
+                      Sign Up
+                    </p>
                   </p>
                 </div>
               </div>

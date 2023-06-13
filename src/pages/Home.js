@@ -10,7 +10,7 @@ function Home() {
   function handleSubmit() {
     console.log("request to save file");
     const url = BASE_URL + "dashboard";
-    // console.log("token", token);
+    
     Axios.get(url, {
       headers: {
         Authorization: token,
@@ -24,17 +24,20 @@ function Home() {
       });
   }
 
-  // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzIzYzA2ZDljZWE2NTMxZTZkYTAwNyIsImVtYWlsIjoibUBtIiwiaWF0IjoxNjg1ODE1NTg3LCJleHAiOjE2ODU5MDE5ODd9.UAJMUhDypfiEpmhUJ4WzaYS6CUPDIvIOU1DijLJEi_8
-  // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzIzYzA2ZDljZWE2NTMxZTZkYTAwNyIsImVtYWlsIjoibUBtIiwiaWF0IjoxNjg2MzIyMTk4LCJleHAiOjE2ODY0MDg1OTh9.qgQF8-_sguh6HQbnCz_IUK4c0ncaWmq-WY8e5AbxNOY
+  function logUserOut(){
+    console.log("clicked logout");
+    window.localStorage.removeItem("token");
+  }
+
   return (
     <>
       <div className="container">
         <div className="home-container">
           <div className="top-container">
             <div id="home" className="brand emphasis-text link-item">
-              Snip Ninja
+              <a href="https://snip-ninja.netlify.app"></a>
             </div>
-            <div className="img__wrap">
+            <div className="img__wrap" onClick={logUserOut}>
               <img className="logout-icon" src={logoutIcon}></img>
               <p className="img-desc">logout</p>
             </div>
