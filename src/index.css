@@ -349,13 +349,13 @@
 
 .file-btn {
   cursor: pointer;
-  padding: 0.3em 1.5em;
   border: none;
   border-radius: var(--small-radius);
   background-color: var(--primary-complimentary-color);
   color: var(--light-color);
   font-weight: var(--bold-weight);
   font-size: var(--side-heading-font-size);
+  padding: .5em 2em;
 }
 
 /* body {
