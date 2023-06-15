@@ -73,7 +73,7 @@ function Home() {
   return (
     <>
       <div className="home-container">
-        <div className="lg-inner-cont">
+        <div className="hm-inner-cont">
           <div className="home-top-container">
             <div
               className="brand emphasis-text link-item"
@@ -97,7 +97,7 @@ function Home() {
                 <p className="tip">{ediorTip}</p>
               </div>
             </div>
-            <Editor
+            {/* <Editor
               className="editor"
               width="100%"
               height="300px"
@@ -109,7 +109,10 @@ function Home() {
               onChange={(value, event) => {
                 handleOnCodeChange(value, event);
               }}
-            />
+            /> */}
+            <div className="editor">
+              <textarea className="editor-area" spellCheck="false" autoFocus="true"/>
+            </div>
 
             <div className="file-container">
               <div className="file-input-cont">

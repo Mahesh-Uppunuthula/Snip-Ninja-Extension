@@ -16,5 +16,5 @@
     }
   ],
   "permissions": ["https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"],
-  "content_security_policy": "script-src 'self' 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js' object-src 'self'"
+  "content_security_policy":"script-src 'self' 'https://cdn.jsdelivr.net/npm/monaco-editor@0.36.1/min/vs/loader.js' 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js' object-src 'self'"
 }
