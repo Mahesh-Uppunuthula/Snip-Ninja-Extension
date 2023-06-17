@@ -15,6 +15,7 @@ function Home() {
 
   const [fileName, setFileName] = useState("");
   const [code, setCode] = useState("");
+  const [isSaveClicked, setSaveClicked] = useState(0);
   const [folder, setFolder] = useState();
 
   useEffect(() => {
@@ -29,7 +30,7 @@ function Home() {
       .catch((err) => {
         console.log("fav folder err", err);
       });
-  },[]);
+  }, []);
 
   function logUserOut() {
     console.log("clicked logout");
@@ -65,29 +66,40 @@ function Home() {
 
   function saveFile() {
     if (code) {
-      // save code
-      console.log("valid code");
-      const url = SERVER_URL + "/editor";
-      const payload = {
-        title: fileName,
-        content: code,
-        folderId: folder._id,
-        folderName: folder.name,
-      };
-      Axios.post(url, payload, {
-        headers: {
-          Authorization: token
-        },
-      })
-        .then((response) => {
-          /**
-           * show message 
-          */
-         const msg = response.data.message;
+      setSaveClicked((prev)=>{return prev + 1});
+      /**
+       * monitoring use clicks to not save multiple times
+       * */ 
+      if (isSaveClicked === 1) {
+        /**
+         * save code
+         * show progress bar
+         */
+        const url = SERVER_URL + "/editor";
+        const payload = {
+          title: fileName,
+          content: code,
+          folderId: folder._id,
+          folderName: folder.name,
+        };
+        Axios.post(url, payload, {
+          headers: {
+            Authorization: token,
+          },
         })
-        .catch((err) => {
-          console.log("save err", err);
-        });
+          .then((response) => {
+            /**
+             * show message
+             */
+            const msg = response.data.message;
+            setCode("");
+            setFileName("");
+            setSaveClicked(0);
+          })
+          .catch((err) => {
+            console.log("save err", err);
+          });
+      }
     } else {
       console.log("empty");
     }
@@ -146,9 +158,12 @@ function Home() {
                   />
                 </div>
                 <div className="right">
-                  <button className="file-btn" onClick={checkValidToken}>
+                  {<button  
+                    style={{backgroundColor: (isSaveClicked > 0) && "grey"}}
+                    className="file-btn" 
+                    onClick={checkValidToken}>
                     save
-                  </button>
+                  </button>}
                 </div>
               </div>
             </div>
