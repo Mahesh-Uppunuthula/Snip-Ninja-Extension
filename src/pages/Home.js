@@ -10,28 +10,26 @@ import buldIcon from "../assets/bulb.svg";
 import logoutIcon from "../assets/logout.svg";
 
 function Home() {
-  const token = window.localStorage.getItem("snip_ninja_ext_token");
-  const BASE_URL = "https://snippets-sever.onrender.com/";
   const ediorTip = "paste your code below";
+  const token = window.localStorage.getItem("snip_ninja_ext_token");
 
+  const [fileName, setFileName] = useState("");
   const [code, setCode] = useState("");
   const [folder, setFolder] = useState();
 
-  useEffect(()=>{
-    Axios.get(SERVER_URL + "/extension", 
-    {
-      headers:
-      {
-        Authorization:token
-      }
+  useEffect(() => {
+    Axios.get(SERVER_URL + "/extension", {
+      headers: {
+        Authorization: token,
+      },
     })
-    .then((response)=>{
-      setFolder(response.data.response[0]);
-    })
-    .catch((err)=>{
-      console.log("fav folder err", err);
-    })
-  })
+      .then((response) => {
+        setFolder(response.data.response[0]);
+      })
+      .catch((err) => {
+        console.log("fav folder err", err);
+      });
+  },[]);
 
   function logUserOut() {
     console.log("clicked logout");
@@ -70,20 +68,25 @@ function Home() {
       // save code
       console.log("valid code");
       const url = SERVER_URL + "/editor";
-      const payload = 
-      {
-        title:code.til
-      }
-      Axios.post(url, {
+      const payload = {
+        title: fileName,
+        content: code,
+        folderId: folder._id,
+        folderName: folder.name,
+      };
+      Axios.post(url, payload, {
         headers: {
-          Authorization: token,
+          Authorization: token
         },
       })
         .then((response) => {
-          console.log("response ", response.data.folders);
+          /**
+           * show message 
+          */
+         const msg = response.data.message;
         })
         .catch((err) => {
-          console.log("err", err);
+          console.log("save err", err);
         });
     } else {
       console.log("empty");
@@ -136,6 +139,10 @@ function Home() {
                     type="text"
                     placeholder="enter file name"
                     className="file-input"
+                    value={fileName}
+                    onChange={(e) => {
+                      setFileName(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="right">
