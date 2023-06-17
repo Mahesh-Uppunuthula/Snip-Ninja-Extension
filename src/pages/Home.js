@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
 // LINKS
@@ -15,6 +15,23 @@ function Home() {
   const ediorTip = "paste your code below";
 
   const [code, setCode] = useState("");
+  const [folder, setFolder] = useState();
+
+  useEffect(()=>{
+    Axios.get(SERVER_URL + "/extension", 
+    {
+      headers:
+      {
+        Authorization:token
+      }
+    })
+    .then((response)=>{
+      setFolder(response.data.response[0]);
+    })
+    .catch((err)=>{
+      console.log("fav folder err", err);
+    })
+  })
 
   function logUserOut() {
     console.log("clicked logout");
@@ -52,7 +69,11 @@ function Home() {
     if (code) {
       // save code
       console.log("valid code");
-      const url = SERVER_URL + "/dashboard";
+      const url = SERVER_URL + "/editor";
+      const payload = 
+      {
+        title:code.til
+      }
       Axios.post(url, {
         headers: {
           Authorization: token,
@@ -112,7 +133,7 @@ function Home() {
                 <div className="left">
                   <img className="hm-icon" src={fileIcon} alt="file icon" />
                   <input
-                    type="textx"
+                    type="text"
                     placeholder="enter file name"
                     className="file-input"
                   />
