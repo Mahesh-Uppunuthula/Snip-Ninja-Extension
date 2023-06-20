@@ -93,8 +93,6 @@ Contributions to the React Chrome Extension - Snip Ninja are welcome! If you'd l
 
 ## License
 
-This project is licensed under the MIT License. See the [
-
-LICENSE](LICENSE) file for more information.
+This project is licensed under the MIT License. 
 
 Happy coding!
