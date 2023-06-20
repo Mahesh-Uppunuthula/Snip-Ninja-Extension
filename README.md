@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# React Chrome Extension - Snip Ninja
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+The React Chrome Extension - Snip Ninja Extension is a powerful tool that allows users to seamlessly log in to their Snip Ninja account and conveniently save or access snippets directly from the extension itself. This extension utilizes the Snip Ninja server API to establish communication between the extension and the user's account, ensuring a secure and efficient experience.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Seamless Login**: Users can effortlessly log in to their Snip Ninja Extension account using the same credentials they use on the Snip Ninja website.
+- **Save Snippets**: Users can save code snippets directly from the extension, eliminating the need to switch between different tools or platforms.
+- **Access Snippets**: Users can access their saved snippets conveniently from within the extension, allowing for quick reference and efficient coding.
+- **Secure Communication**: The extension communicates securely with the Snip Ninja server API, ensuring the privacy and integrity of user data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To install and use the React Chrome Extension - Snip Ninja, follow these steps:
 
-### `npm test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   git clone https://github.com/your-username/snip-ninja-extension.git
+   ```
 
-### `npm run build`
+2. Navigate to the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   cd snip-ninja-extension
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install the dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+4. Build the extension:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npm run build
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Open Google Chrome and go to `chrome://extensions`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+6. Enable the **Developer mode** toggle located in the top right corner.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+7. Click on the **Load unpacked** button.
 
-## Learn More
+8. Select the `build` directory from the project folder.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+9. The Snip Ninja extension should now be installed and ready to use.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
+1. Click on the Snip Ninja extension icon in the Chrome toolbar.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. If you haven't logged in yet, enter your Snip Ninja account credentials and click **Login**.
 
-### Analyzing the Bundle Size
+3. Once logged in, you can start saving or accessing snippets directly from the extension.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. To save a snippet, click on the **Save Snippet** button. Enter a title, code, and optional description, then click **Save**.
 
-### Making a Progressive Web App
+<!-- 5. To access your saved snippets, click on the **My Snippets** button. You'll see a list of your snippets with their titles and descriptions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+6. To view a snippet, click on its title. The code and description will be displayed. -->
 
-### Advanced Configuration
+7. To log out, click on the **Logout** button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+Contributions to the React Chrome Extension - Snip Ninja are welcome! If you'd like to contribute, please follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Fork the repository.
 
-### `npm run build` fails to minify
+2. Create a new branch:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```bash
+   git checkout -b feature/my-feature
+   ```
+
+3. Make your changes and commit them:
+
+   ```bash
+   git commit -m 'Add my feature'
+   ```
+
+4. Push to the branch:
+
+   ```bash
+   git push origin feature/my-feature
+   ```
+
+5. Open a pull request with a detailed description of your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [
+
+LICENSE](LICENSE) file for more information.
+
+Happy coding!
