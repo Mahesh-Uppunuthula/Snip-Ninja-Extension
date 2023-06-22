@@ -164,12 +164,6 @@
   justify-content: center;
 }
 
-.top-container {
-  display: flex;
-  width: 100%;
-  align-items: center;
-}
-
 .logout-icon {
   cursor: pointer;
   margin-left: auto;
@@ -178,7 +172,7 @@
   filter: invert(4%) sepia(7%) saturate(144%) hue-rotate(315deg)
     brightness(103%) contrast(93%);
 }
-.img__wrap {
+/* .img__wrap {
   margin-right: 10px;
   width: auto;
   position: relative;
@@ -203,7 +197,7 @@
 .img__wrap:hover .img-desc {
   visibility: visible;
   background-color: red;
-}
+} */
 
 /* HOME STYLES */
 
